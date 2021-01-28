@@ -143,6 +143,174 @@ qqA;<Esc>j@qq@qkkDZZ
 
 `<C-E>` 向下滚动一页。因为vimrc中设置了 `set scrolloff=3 " keep 3 lines when scrolling`
 
+### ### Simple, Practical, and Common #55b18bbea9c2c30d04000001
+
+##### Start file
+
+```
+*temp var1 0
+*temp var2 "hi"
+*temp var3 -1
+*temp var4 42
+*temp var5 "asdf"
+*temp var6 0
+
+Simple things we do all the time should be able to be done with very few keystrokes, but sometimes I find something I need to do makes me go, "There MUST be a better way."
+
+This challenge is just a simple movement and entering text at a certain place.
+```
+
+##### End file
+
+```
+*temp var1 0
+*temp var2 "hi"
+*temp var3 -1
+*temp var4 42
+*temp var5 "asdf"
+*temp var6 0
+*temp var7 11
+
+Simple things we do all the time should be able to be done with very few keystrokes, but sometimes I find something I need to do makes me go, "There MUST be a better way."
+
+New text.
+
+This challenge is just a simple movement and entering text at a certain place.
+```
+
+**30 steps (first try)**
+
+```
+6Gyypf6DA7 11<Esc>9Go<CR>New text.<Esc>ZZ
+```
+
+**28 steps**
+
+```
+6GYpf6R7 11<Esc>3joNew text.<CR><Esc>ZZ
+```
+
+`R` 进入Replace模式
+
+**26 steps**
+
+```
+6GYp<C-A>ws11<Esc>3joNew text.<CR><Esc>ZZ
+```
+
+`<C-A>` 将当前/下一个 数字增大1
+
+`<C-X>` 将当前/下一个 数字减少1
+
+**23 steps**
+
+```
+GONew t<C-N><C-N>.<CR><Esc>6GYp<C-A>l11<C-A>ZZ
+```
+
+`<C-N>` 自动补全
+
+**22 steps (best solution)**
+
+```
+#Yp<C-A>l11<C-A>GONew t<C-N><C-N>.<CR><Esc>ZZ
+```
+
+`#` to the previous **same** word and `*` to the next same word
+
+### **swap number pairs** #5fa95fbdd285680008e41e4b
+
+<https://www.vimgolf.com/challenges/5fa95fbdd285680008e41e4b>
+
+Swap the numbers in a bunch of 2-element arrays.
+
+##### Start file
+
+```
+[2, 1], [5, 4]
+[6, 3]
+[7, 4]
+[8, 2], [12, 11]
+```
+
+##### End file
+
+```
+[1, 2], [4, 5]
+[3, 6]
+[4, 7]
+[2, 8], [11, 12]
+```
+
+**28 steps**
+
+```
+qq/[<CR>ldwa <Esc>p%%db%p%%hxq5@qZZ
+```
+
+**22 steps (recommanded)**
+
+```
+qq/[<CR>ldwlpldt]%pq5@qZZ
+```
+
+使用 `/[` 搜索定位到下一个括号
+
+**19 steps**
+
+```
+qqWdw%pldwWPWq5@qZZ
+```
+
+使用 `W` 定位到下一个括号
+
+**17 steps**
+
+```
+qq%X%evp<C-O>PWq5@qZZ
+```
+
+使用 `X` 向前删除一个字符
+
+使用 `C-O` 跳到上一个位置
+
+**16 steps (best solution) (too tricky)**
+
+```
+axepX%p5e<Esc>u6@.ZZ
+```
+
+使用 `@.` 来执行剪切板中的指令
+
+### Box it #5c742a5a50bdf70006d43280
+
+<https://www.vimgolf.com/challenges/5c742a5a50bdf70006d43280>
+
+Create a box around a line.
+
+##### Start file
+
+```
+My dream is to be in a box
+```
+
+##### End file
+
+```
+###############################
+# My dream was to be in a box #
+###############################
+```
+
+**29 steps**
+
+```
+i# <Esc>fideiwas<Esc>A #<CR>#<Esc>x31pyykPZZ
+```
+
+
+
+
 
 
 
