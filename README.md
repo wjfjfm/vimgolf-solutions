@@ -143,7 +143,7 @@ qqA;<Esc>j@qq@qkkDZZ
 
 `<C-E>` 向下滚动一页。因为vimrc中设置了 `set scrolloff=3 " keep 3 lines when scrolling`
 
-### ### Simple, Practical, and Common #55b18bbea9c2c30d04000001
+### Simple, Practical, and Common #55b18bbea9c2c30d04000001
 
 ##### Start file
 
@@ -310,12 +310,73 @@ i# <Esc>fideiwas<Esc>A #<CR>#<Esc>x31pyykPZZ
 
 
 
+### One number per line #56fb2e75ccffcc0009026473
 
+<https://www.vimgolf.com/challenges/56fb2e75ccffcc0009026473>
 
+**23 steps**
 
+```
+dj:%s/,/\r/g<CR>:g/^$/d<CR>ZZ
+```
 
+### I forgot quotes #5462e3f41198b80002512673
 
+<https://www.vimgolf.com/challenges/5462e3f41198b80002512673
 
+**16 steps**
+
+```
+qqA"<Esc>bi"<Esc>jq2@qZZ
+```
+
+### Words in parens #5192f96ad8df110002000002
+
+<https://www.vimgolf.com/challenges/5192f96ad8df110002000002
+
+**17 steps**
+
+```
+qqi(<Esc>ea)<Esc>w@qq@qZZ
+```
+
+### Simple text editing with Vim #4d1a34ccfa85f32065000004
+
+<https://www.vimgolf.com/challenges/4d1a34ccfa85f32065000004
+
+**30 steps**
+
+```
+4G$ya"jp9GdW5wio<C-N><C-N><C-N> <Esc>/ b<CR>nnDZZ
+```
+
+### just the middle #54862fbb3f90ac0002904cf5
+
+<https://www.vimgolf.com/challenges/54862fbb3f90ac0002904cf5
+
+**8 steps**
+
+```
+dj4GdGZZ
+```
+
+### A HAPPY NEW YEAR 2014 !  (52c3cb0d9b8634000200000e)
+
+<http://www.vimgolf.com/challenges/52c3cb0d9b8634000200000e>
+
+**13 steps**
+
+```
+wwd2eiNEW<Esc><C-A>ZZ
+```
+
+###  Vice versa - 7383 entries (55bcdc3ef4219f456102374f)
+
+<http://www.vimgolf.com/challenges/55bcdc3ef4219f456102374f>
+
+```
+2wd2eflPldt.TkpZZ
+```
 
 
 
