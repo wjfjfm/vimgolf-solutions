@@ -625,3 +625,178 @@ sort the list of newline-separated numbers incrementally. Numbers are in the ran
 
 
 
+### **Around the clock**
+
+<http://www.vimgolf.com/challenges/5cf9c4c46db575000607ed25>
+
+```
+vimgolf put 5cf9c4c46db575000607ed25
+```
+
+You'll want to use 2 special commands to complete this. If you haven't yet, read through 'input.txt', especially :help simple-changes
+
+##### Start file
+
+```
+Can you decode my ROTten encrypted message?
+uvag: uryc fvzcyr-punatr vf lbhe sevraq!
+```
+
+##### End file
+
+```
+Can you decode my rotten encrypted message?
+hint: HELP SIMPLE-CHANGE is your friend!
+```
+
+**13 steps (best solution)**
+
+```
+Vu~+g?$W18~ZZ
+```
+
+### **Simple format (2)**
+
+<http://www.vimgolf.com/challenges/5bf26adb9a198b0009ce0a87>
+
+```
+vimgolf put 5bf26adb9a198b0009ce0a87
+```
+
+try again!
+
+##### Start file
+
+```
+a==b equal to
+a!=b not equal to
+a>b greater than
+a>=b greater than or equal to
+a<b less than
+a<=b less than or equal to
+```
+
+##### End file
+
+```
+        a == b          equal to
+        a != b          not equal to
+        a >  b          greater than
+        a >= b          greater than or equal to
+        a <  b          less than
+        a <= b          less than or equal to
+```
+
+**26 steps**
+
+```
+qqa <Esc>e3.6|dwls<Tab><Tab><Esc>>><CR>q5@qZZ
+```
+
+**23 steps (best solution)**
+
+```
+MEi <Esc><C-E>.*l<C-V>nls<Tab><Tab><Esc>>}pEPZZ
+```
+
+### **Todo list specification**
+
+<http://www.vimgolf.com/challenges/595cf3b0e9c7a8083500001b>
+
+```
+vimgolf put 595cf3b0e9c7a8083500001b
+```
+
+The every item on the todo list must be done today. Modify the list to reflect that.
+
+##### Start file
+
+```
+#87 do the laundry
+#25 take out the trash
+#97 wash the dishes
+#19 mow the lawn
+#48 walk the dog
+#89 water the plants
+#11 pick up the living room
+#64 clean the bathroom
+#58 dust the shelves
+```
+
+##### End file
+
+```
+#87 do the laundry
+ 87 needs to be done today
+#25 take out the trash
+ 25 needs to be done today
+#97 wash the dishes
+ 97 needs to be done today
+#19 mow the lawn
+ 19 needs to be done today
+#48 walk the dog
+ 48 needs to be done today
+#89 water the plants
+ 89 needs to be done today
+#11 pick up the living room
+ 11 needs to be done today
+#64 clean the bathroom
+ 64 needs to be done today
+#58 dust the shelves
+ 58 needs to be done today
+```
+
+**39 steps (first try)**
+
+```
+qqlywo <C-O>pneeds to be done today<Esc><CR>q8@qZZ
+```
+
+**37 steps (best solution)**
+
+```
+qqo <C-Y><C-Y> needs to be done today<Esc><CR>q8@qZZ
+```
+
+### **Subnetting**
+
+<http://www.vimgolf.com/challenges/5aa68c3b81f0830009000005>
+
+```
+vimgolf put 5aa68c3b81f0830009000005
+```
+
+Split up the IP addresses in the right way.
+
+##### Start file
+
+```
+37.192.0.0/13
+37.192.0.0/13
+37.192.0.0/13
+37.192.0.0/13
+...
+```
+
+##### End file
+
+```
+37.192.0.0/18
+37.192.64.0/18
+37.192.128.0/18
+37.192.192.0/18
+...
+```
+
+**37 steps**
+
+```
+jdG$r8qqYp4w64<C-A>q2@qqa3kYGpw<C-A>3@qq6@aZZ
+```
+
+**29 steps (best soluiton)**
+
+```
+qq$<C-V>}r85w<C-V>jj64g<C-A>25w<C-V>}<C-A>q7@q<C-X>ZZ
+```
+
