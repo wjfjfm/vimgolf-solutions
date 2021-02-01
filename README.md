@@ -378,5 +378,250 @@ wwd2eiNEW<Esc><C-A>ZZ
 2wd2eflPldt.TkpZZ
 ```
 
+### Reformat/Refactor a Golfer Class - 5779 entries (4d1a1c36567bac34a9000002)
+
+<http://www.vimgolf.com/challenges/4d1a1c36567bac34a9000002>
+
+### prepend * to every non-blank line - 5685 entries (5e4dfcccaa2db400090b66c3)
+
+<http://www.vimgolf.com/challenges/5e4dfcccaa2db400090b66c3>
+
+```
+:%s:^.:*&<CR>ZZ
+```
+
+###  Basic renumbering - 5391 entries (54595b13128576000257a3c1)
+
+<http://www.vimgolf.com/challenges/54595b13128576000257a3c1>
+
+```
+qqywjPdeh10<C-A>0q4@qZZ
+```
+
+
+
+### **citizen_hacks_2019_challenge2 #5d74187d98328b0006ba474e **
+
+<http://www.vimgolf.com/challenges/5d74187d98328b0006ba474e>
+
+```
+vimgolf put 5d74187d98328b0006ba474e
+```
+
+For the Citizen Hacks 2019 Vim competition.
+
+##### Start file
+
+```
+citizen hacks
+```
+
+##### End file
+
+```
+Citizen HACKS
+```
+
+**7 steps**
+
+```
+~w<C-V>e~ZZ
+```
+
+**6 steps (best solution)**
+
+```
+~w5~ZZ
+```
+
+
+
+### **Quote modules (ver.2)**
+
+<http://www.vimgolf.com/challenges/5e3ca51e6ea90a00096b3007>
+
+```
+vimgolf put 5e3ca51e6ea90a00096b3007
+```
+
+Complete golang import statement.
+
+##### Start file
+
+```
+import
+    log
+    net/http
+
+    graphql github.com/graph-gophers/graphql-go
+    github.com/graph-gophers/graphql-go/relay
+```
+
+##### End file
+
+```
+import (
+    "log"
+    "net/http"
+
+    graphql "github.com/graph-gophers/graphql-go"
+    "github.com/graph-gophers/graphql-go/relay"
+)
+```
+
+**34 steps**
+
+```
+A (<Esc>qqjI"<Esc>A"<Esc>q@qjjhi"<Esc>A"<Esc>@qo)<Esc>d0ZZ
+```
+
+**23 steps (best solution)**
+
+```
+A (<Esc>qqEA"<C-O>B<C-@>$q3@qo<C-U>)<Esc>ZZ
+```
+
+### **Paragraph breaks**
+
+<http://www.vimgolf.com/challenges/57cf3e398c660c1f8f014717>
+
+```
+vimgolf put 57cf3e398c660c1f8f014717
+```
+
+Swap the blank lines and the aaa lines.
+
+##### Start file
+
+```
+aa
+a
+aaa
+
+aa
+a
+aaa
+
+aa
+a
+aaa
+
+aa
+a
+```
+
+##### End file
+
+```
+aa
+a
+
+aaa
+aa
+a
+
+aaa
+aa
+a
+
+aaa
+aa
+a
+```
+
+**13 steps**
+
+```
+qq}JkO<Esc>q2@qZZ
+```
+
+**10 steps (best solution)**
+
+```
+:g/a/m+<CR>ZZ
+```
+
+### **Extract wireshark capture filter**
+
+<http://www.vimgolf.com/challenges/5d6b72521c6d070006bded72>
+
+```
+vimgolf put 5d6b72521c6d070006bded72
+```
+
+Extract wireshark capture filter from IP plan
+
+##### Start file
+
+```
+oam_net               10.81.137.0/29    10.81.137.1-10.81.137.6      10.81.137.6    2300
+traffic_net_1         10.81.137.16/28   10.81.137.17-10.81.137.30    10.81.137.30   2301
+metallb_default_pool  21.21.0.0/24      21.21.0.1-21.21.0.254        21.21.0.254    -
+director_ip           10.81.137.0/29    10.81.137.5-10.81.137.5      10.81.137.6    -
+oam_net               10.81.137.8/29    10.81.137.9-10.81.137.14     10.81.137.14   2302
+traffic_net_1         10.81.137.32/28   10.81.137.33-10.81.137.46    10.81.137.46   2303
+istio_ip_1            10.81.139.1/32    10.81.139.1-10.81.139.1      -              -
+```
+
+##### End file
+
+```
+net 10.81.137.0/29 or net 10.81.137.16/28 or net 21.21.0.0/24 or net 10.81.137.0/29 or net 10.81.137.8/29 or net 10.81.137.32/28 or net 10.81.139.1/32
+```
+
+#### **23 steps (best solution)**
+
+```
+qq21snet<Esc>ElDJaor <Esc>lq6@qZZ
+```
+
+### **Number Sort**
+
+<http://www.vimgolf.com/challenges/5b0ba8a4dd701305aeb59201>
+
+```
+vimgolf put 5b0ba8a4dd701305aeb59201
+```
+
+sort the list of newline-separated numbers incrementally. Numbers are in the range 1 to 1000, with 500 missing
+
+##### Start file
+
+```
+960
+90
+196
+650
+219
+422
+513
+...
+```
+
+##### End file
+
+```
+1
+2
+3
+4
+5
+9
+10
+...
+```
+
+**10 steps (recommanded)**
+
+```
+:sort n<CR>ZZ
+```
+
+**9 steps (best solution)**
+
+```
+:sor n<CR>ZZ
+```
+
 
 
