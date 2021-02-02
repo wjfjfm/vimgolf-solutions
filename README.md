@@ -1009,3 +1009,147 @@ version = "*"
 default-features = false
 features = ["handlebars_templates"]
 ```
+
+**16 steps (best soluiton)**
+
+```
+:7,$norm<C-X>ci"*<CR>ZZ
+```
+
+### **Add quotes to ansible playbook**
+
+<http://www.vimgolf.com/challenges/5f0f5fbe280fbf000c233304>
+
+```
+vimgolf put 5f0f5fbe280fbf000c233304
+```
+
+You created an ansible playbook, but forgot to add quotes. Can you fix it?
+
+##### Start file
+
+```
+---
+- hosts: all
+  vars:
+    ssh_state: True
+  tasks:
+    - name: Manage openssh
+      package:
+        name: openssh
+        state: {{ ssh_state }}
+```
+
+##### End file
+
+```
+---
+- hosts: all
+  vars:
+    ssh_state: True
+  tasks:
+    - name: Manage openssh
+      package:
+        name: openssh
+        state: "{{ ssh_state }}"
+```
+
+**8 steps (best solution)**
+
+```
+GWi"<End><C-@>ZZ
+```
+
+`<C-@>` Insert previously inserted text and stop insert. (from :help CTRL-@)
+
+### **ssh config skills**
+
+<http://www.vimgolf.com/challenges/5f7337a3a22d0c0009268605>
+
+```
+vimgolf put 5f7337a3a22d0c0009268605
+```
+
+Parse output from `kuebctl get no -o wide` into an .ssh/config file!
+
+##### Start file
+
+```
+master-0-pccc-269-4                Ready                      master   5d3h   v1.18.2   10.0.10.10    <none>
+worker-pool1-07p524t4-pccc-269-4   Ready                      worker   5d2h   v1.18.2   10.0.10.17    <none>
+worker-pool1-2l7ogj75-pccc-269-4   Ready                      worker   5d2h   v1.18.2   10.0.10.18    <none>
+...
+```
+
+##### End file
+
+```
+host master
+  hostname 10.0.10.10
+
+host 07
+  hostname 10.0.10.17
+
+host 2l
+  hostname 10.0.10.18
+...
+```
+
+**55 steps (not best)**
+
+```
+<C-V>GIhost <Esc>f-qqc5W<CR>  hostname <Esc>ElC<CR><Esc>qoWd2;ll@q<Esc>dd12@"ddZZ
+```
+
+### **Alphabet soup**
+
+<http://www.vimgolf.com/challenges/5ebe8a63d8085e000c2f5bd5>
+
+```
+vimgolf put 5ebe8a63d8085e000c2f5bd5
+```
+
+Create a column of all alphabet characters organized in a funky way
+
+##### Start file
+
+```
+a
+```
+
+##### End file
+
+```
+abcdefghijklmnopqrstuvwxyz
+bcdefghijklmnopqrstuvwxyza
+cdefghijklmnopqrstuvwxyzab
+defghijklmnopqrstuvwxyzabc
+efghijklmnopqrstuvwxyzabcd
+fghijklmnopqrstuvwxyzabcde
+...
+```
+
+**41 steps**
+
+```
+abcdefghijklmnopqrstuvwxyz<Esc>qqYpx$pq24@qZZ
+```
+
+**26 steps**
+
+```
+:h<_<CR>jjYZZVpqqYpx$pq24@qZZ
+```
+
+**25 steps (best solution)**
+
+```
+25RYpx$p<Esc>:h<_<CR>W+YZQVp@"ZZ
+```
+
+
+
+
+
+
+
