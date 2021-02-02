@@ -800,3 +800,212 @@ jdG$r8qqYp4w64<C-A>q2@qqa3kYGpw<C-A>3@qq6@aZZ
 qq$<C-V>}r85w<C-V>jj64g<C-A>25w<C-V>}<C-A>q7@q<C-X>ZZ
 ```
 
+### **Word frequency alignment**
+
+<http://www.vimgolf.com/challenges/50f3c2d55c891f0002000002>
+
+```
+vimgolf put 50f3c2d55c891f0002000002
+```
+
+You've got to align the second column, but the spacing is inconvenient and there are nasty tabs in the way. If you're a "real Vim ninja," this could be very quick indeed...
+
+##### Start file
+
+```
+     align here
+the        56271872
+of        33950064
+and        29944184
+to        25956096
+in        17420636
+I        11764797
+that        11073318
+was        10078245
+his        8799755
+he        8397205
+it        8058110
+```
+
+##### End file
+
+```
+     align here
+the  56271872
+of   33950064
+and  29944184
+to   25956096
+in   17420636
+I    11764797
+that 11073318
+was  10078245
+his  8799755
+he   8397205
+it   8058110
+```
+
+**26 steps**
+
+```
+:%s:\t:   <CR><C-O>qq<CR>wd6|@qq@qZZ
+```
+
+**17 steps**
+
+```
+:%s:\t:   <CR><C-O>qq<CR>wd6|@qq@qZZ
+```
+
+**5 steps (best solution)**
+
+```
+<C-V>)<ZZ
+```
+
+### **Suffix sort**
+
+<http://www.vimgolf.com/challenges/53fdb108658ede0002599a8f>
+
+```
+vimgolf put 53fdb108658ede0002599a8f
+```
+
+Sort from the end of the line, as if the letters in each line were reversed.
+
+##### Start file
+
+```
+adjutants
+ametropic
+audiobook
+blockable
+demagogic
+embryotic
+excusable
+garroters
+housesits
+labellers
+opacifier
+proofroom
+quercetin
+rejudging
+supremely
+```
+
+##### End file
+
+```
+demagogic
+ametropic
+embryotic
+blockable
+excusable
+rejudging
+audiobook
+proofroom
+quercetin
+opacifier
+labellers
+garroters
+housesits
+adjutants
+supremely
+```
+
+**33 steps**
+
+```
+qq$"ax"Ax......"aP<CR>@qq@q:so<Tab><CR>@qZZ
+```
+
+`"ax` 使用a寄存器来x
+
+`"Ax` 使用a寄存器来x，并保留a寄存器结果，将新的x内容加入到a寄存器后
+
+**19 steps (best solution)**
+
+```
+qq/<C-P>.<CR>:sor//<CR>q7@qZZ
+```
+
+### **RUST Cargo.toml version to last**
+
+<http://www.vimgolf.com/challenges/5fe326eb11ba250006cbf2cd>
+
+```
+vimgolf put 5fe326eb11ba250006cbf2cd
+```
+
+RUST Cargo.toml version to last. rusty practice on vimgolf
+
+##### Start file
+
+```
+[package]
+name = "rust-web"
+version = "0.1.0"
+authors = ["The Rust Developers"]
+edition = "2018"
+
+[dependencies]
+lazy_static = "1.2.0"
+fluent = "0.13"
+fluent-bundle = "0.6.0"
+fluent-syntax = "0.10.0"
+fluent-locale = "0.10.1"
+handlebars-fluent = "0.2.0"
+rand = "0.8"
+regex = "1"
+rocket = "0.4.6"
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8.14"
+sass-rs = "0.2.1"
+reqwest = { version = "0.10.10", features = ["blocking", "json"] }
+toml = "0.5"
+serde_json = "1.0"
+rust_team_data = { git = "https://github.com/rust-lang/team" }
+handlebars = "1.1.0"
+siphasher = "0.3.3"
+percent-encoding = "2.1.0"
+
+[dependencies.rocket_contrib]
+version = "0.4"
+default-features = false
+features = ["handlebars_templates"]
+```
+
+##### End file
+
+```
+[package]
+name = "rust-web"
+version = "0.1.0"
+authors = ["The Rust Developers"]
+edition = "2018"
+
+[dependencies]
+lazy_static = "*"
+fluent = "*"
+fluent-bundle = "*"
+fluent-syntax = "*"
+fluent-locale = "*"
+handlebars-fluent = "*"
+rand = "*"
+regex = "*"
+rocket = "*"
+serde = { version = "*", features = ["derive"] }
+serde_yaml = "*"
+sass-rs = "*"
+reqwest = { version = "*", features = ["blocking", "json"] }
+toml = "*"
+serde_json = "*"
+rust_team_data = { git = "https://github.com/rust-lang/team" }
+handlebars = "*"
+siphasher = "*"
+percent-encoding = "*"
+
+[dependencies.rocket_contrib]
+version = "*"
+default-features = false
+features = ["handlebars_templates"]
+```
