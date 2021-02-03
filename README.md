@@ -1,4 +1,4 @@
-# VimGolf Solution
+
 
 <http://www.vimgolf.com/>
 
@@ -1147,9 +1147,332 @@ abcdefghijklmnopqrstuvwxyz<Esc>qqYpx$pq24@qZZ
 25RYpx$p<Esc>:h<_<CR>W+YZQVp@"ZZ
 ```
 
+### **HS Final exam vimgolf**
 
+<https://www.vimgolf.com/challenges/5fa53808a4d481000c3f114d>
 
+```
+vimgolf put 5fa53808a4d481000c3f114d
+```
 
+Change the initial file to a single line containing all names comma-separated with numbers inside parentheses.
+
+##### Start file
+
+```
+   Hossein 40.32472348
+    Miguel 50.31417393123
+    Pierre 40.1283712
+     Anier 45.213917900
+ Giancarlo 57.2137189394
+     Karim 34.87621341324
+  Victoria 23.1236248821
+   Nicolas 37.2163718741
+   Parshad 40.1273461284
+   Shanaya 60.213764127
+    Victor 30.2164781849
+    Manuel 50.1246215457
+```
+
+##### End file
+
+```
+Hossein (40), Miguel (50), Pierre (40), Anier (45), Giancarlo (57), Karim (34), Victoria (23), Nicolas (37), Parshad (40), Shanaya (60), Victor (30), Manuel (50)
+```
+
+**27 steps (first try)**
+
+```
+d0qqwdwi(), <Esc>bpWDJq11@qhDZZ
+```
+
+**21 steps (best soluiton)**
+
+```
+qqf.C),<C-D><C-O>B(<Esc>Jq11@qxZZ
+```
+
+### **Python dataclasses**
+
+https://www.vimgolf.com/challenges/6013804df3308e0009368f1c
+
+```
+vimgolf put 6013804df3308e0009368f1c
+```
+
+Simple challenge to extract fields from a Python class
+
+##### Start file
+
+```
+from dataclasses import dataclass
+
+@dataclass
+class Student:
+    student_id: str
+    name: str
+    age: int 
+    score: float
+
+fields = ""
+```
+
+##### End file
+
+```
+from dataclasses import dataclass
+
+@dataclass
+class Student:
+    student_id: str
+    name: str
+    age: int 
+    score: float
+
+fields = "student_id,name,age,score"
+```
+
+**25 steps**
+
+```
+5GqqyeGk$Pa,<Esc><C-O><CR>q3@qj$hxZZ
+```
+
+**19 steps (best solution)**
+
+```
+Gbas<C-N><C-N>,n<C-P>,a<C-P>,s<C-P><C-P><Esc>ZZ
+```
+
+### **xrandr outputs and dashes**
+
+<https://www.vimgolf.com/challenges/5ee9ae243a035f000c6141d7>
+
+```
+vimgolf put 5ee9ae243a035f000c6141d7
+```
+
+uh oh, different video drivers identify display outputs with more dashes. Quick, need to change this xrandr script!
+
+##### Start file
+
+```
+xrandr \
+  --output VIRTUAL1 --off \
+  --output DP3 --off \
+  --output eDP1 --off \
+  --output DP1 --off \
+  --output DP2 --off \
+  --output HDMI3 --off \
+  --output HDMI2 --off \
+  --output HDMI1 --off \
+  --output DP3-1 --off \
+  --output DP3-3 --off \
+  --output DP3-2 --off \
+  --output eDP1 --primary --mode 1920x1080
+```
+
+##### End file
+
+```
+xrandr \
+  --output VIRTUAL-1 --off \
+  --output DP-3 --off \
+  --output eDP-1 --off \
+  --output DP-1 --off \
+  --output DP-2 --off \
+  --output HDMI-3 --off \
+  --output HDMI-2 --off \
+  --output HDMI-1 --off \
+  --output DP-3-1 --off \
+  --output DP-3-3 --off \
+  --output DP-3-2 --off \
+  --output eDP-1 --primary --mode 1920x1080
+```
+
+**16 steps**
+
+```
+<CR>qq3ei-<Esc><CR>@qq@qZZ
+```
+
+**13 steps (best soluiton)**
+
+```
+:%s/\d/-&<CR>ZZ
+```
+
+### **Multiline to Single Line** (fucking boring)
+
+<https://www.vimgolf.com/challenges/5f0890dbb409320009a38274>
+
+```
+vimgolf put 5f0890dbb409320009a38274
+```
+
+Convert a multiline, indented file to a single line with no whitespace
+
+##### Start file
+
+```
+api(
+    'com.vimgolf.challenge'
+)
+```
+
+##### End file
+
+```
+api('com.vimgolf.challenge')
+```
+
+**5 steps (best soluiton)**
+
+```
+JxJZZ
+```
+
+### **Easy modification of ssh config**
+
+https://www.vimgolf.com/challenges/5f8fd2f33dc797000ce6d784
+
+```
+vimgolf put 5f8fd2f33dc797000ce6d784
+```
+
+Just add another alias to each worker
+
+##### Start file
+
+```
+host master
+  hostname 10.0.10.8
+
+host 65
+  hostname 10.0.10.17
+
+host ef
+  hostname 10.0.10.10
+
+host gp
+  hostname 10.0.10.27
+
+host h5
+  hostname 10.0.10.13
+
+host sa
+  hostname 10.0.10.25
+
+host sv
+  hostname 10.0.10.12
+```
+
+##### End file
+
+```
+host master
+  hostname 10.0.10.8
+
+host 65 worker1
+  hostname 10.0.10.17
+
+host ef worker2
+  hostname 10.0.10.10
+
+host gp worker3
+  hostname 10.0.10.27
+
+host h5 worker4
+  hostname 10.0.10.13
+
+host sa worker5
+  hostname 10.0.10.25
+
+host sv worker6
+  hostname 10.0.10.12
+```
+
+**24 steps (best solution)**
+
+```
+qq3+A w<C-P><Esc><C-A>qAorker1<Esc>5@qZZ
+```
+
+**27 steps (recommanded)**
+
+```
+3jA worker1<Esc>qqyaw3jp<C-A>q4@qZZ
+```
+
+### **Enumerate Bullets**
+
+<https://www.vimgolf.com/challenges/5fbfabbbfdf6c50009749916>
+
+```
+vimgolf put 5fbfabbbfdf6c50009749916
+```
+
+We will need to refer to the bullet points in our document explicitly later, so we need to assign them some ID's!
+
+##### Start file
+
+```
+# This is an enumeration of bullet points!
+## Usual placeholders:
+- foo
+- bar
+- baz
+
+- (qux)
+- (quux)
+## pythonic-placeholders:
+- spam
+- eggs
+
+## cryptographic placeholders:
+
+- alice
+- bob
+- eve
+- trudy
+
+### Search-related:
+- needle
+- haystack
+```
+
+##### End file
+
+```
+# This is an enumeration of bullet points!
+## Usual placeholders:
+01. foo
+02. bar
+03. baz
+
+04. (qux)
+05. (quux)
+## pythonic-placeholders:
+06. spam
+07. eggs
+
+## cryptographic placeholders:
+
+08. alice
+09. bob
+10. eve
+11. trudy
+
+### Search-related:
+12. needle
+13. haystack
+```
+
+**20 steps (best soluiton)**
+
+```
+:%s/^-/10.<CR>VHg<C-A><C-V>G<C-X>ZZ
+```
 
 
 
